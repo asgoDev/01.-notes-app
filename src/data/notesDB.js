@@ -1,7 +1,7 @@
 export const noteList = [
   {
     id: 0,
-   
+    title: "Nota 1",
     description: "Esta es una descripción más extensa para la nota 1. Puedes añadir todos los detalles que necesites en este campo.",
     date: "08 de enero de 2024",
     bg: "red",
@@ -21,22 +21,22 @@ export const noteList = [
     bg: "green",
   },
   {
-    id: 17,
-    title: "Nota 18",
+    id: 3,
+    title: "Nota 4",
     description: "Descripción extensa para la nota 18. Añade aquí todos los detalles que necesitas recordar en esta nota en particular.",
     date: "05 de febrero de 2024",
     bg: "violet",
   },
   {
-    id: 18,
-    title: "Nota 19",
+    id: 4,
+    title: "Nota 5",
     description: "Esta es una descripción más extensa para la nota 19. Puedes incluir información adicional y detalles importantes aquí.",
     date: "12 de febrero de 2024",
     bg: "orange",
   },
   {
-    id: 19,
-    title: "Nota 20",
+    id: 5,
+    title: "Nota 6",
     description: "Descripción detallada para la nota 20. Añade aquí todos los detalles que consideres relevantes para esta nota en particular.",
     date: "19 de febrero de 2024",
     bg: "red",
@@ -44,4 +44,4 @@ export const noteList = [
 ];
 
 
-export let idRegister = 20
+export let idRegister = 6

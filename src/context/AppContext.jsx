@@ -2,22 +2,11 @@ import { createContext, useState, useEffect } from "react";
 import { noteList as old, idRegister } from "../data/notesDB";
 import { toggleBoolean } from "../utils/logicFx";
 import { incrementValue } from "../utils/mathFx";
-import { info } from "autoprefixer";
 
 export const AppContext = createContext();
 
 export function AppContextProvider(props) {
-  // future fetching fx
-
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     console.log(getNewId())
-  //   }, 10000);
-  // }, []);
-
-  // states
-
-  const [noteList, setNoteList] = useState(old || undefined);
+  const [noteList, setNoteList] = useState([]);
   const [idCounter, setIdCounter] = useState(idRegister > 0 ? idRegister : 0);
   const [formState, setFormState] = useState({
     isVisible: false,
@@ -25,9 +14,13 @@ export function AppContextProvider(props) {
     noteId: null,
   });
 
+  useEffect(() => {
+    setNoteList(old || []);
+  }, []);
+
   // Control
 
-  const getNewId = () => {
+  const generateId = () => {
     let currentId = idCounter;
     updateIdCounter();
     return currentId;
@@ -40,13 +33,10 @@ export function AppContextProvider(props) {
   // CRUD functions
   const createNote = (noteData) => {
     let newNote = { ...noteData };
-
-    if (newNote.id) return updateNote(newNote);
-
     if (!newNote.title && !newNote.description) return;
-    //pendiente
-    if (!newNote.id && newNote.id != 0) newNote.id = getNewId();
-
+    if (newNote.id || newNote.id === 0) return updateNote(newNote);
+    // if noteData doesn't have id, generateNewOne
+    newNote.id = generateId();
     setNoteList((prevList) => [...prevList, newNote]);
   };
 
@@ -57,9 +47,9 @@ export function AppContextProvider(props) {
   const updateNote = (toUpdateNote) => {
     const targetId = toUpdateNote.id;
     const targetIndex = noteList.findIndex((note) => note.id == targetId);
-    const newList = noteList.filter((note) => note.id != targetIndex);
-    newList.concat(toUpdateNote)
-    setNoteList(newList);
+    // aqui estaba el error. pendiente
+    const newList = noteList.filter((note, i) => i != targetIndex);
+    setNoteList([...newList, toUpdateNote]);
   };
   // Interface functions
 
@@ -75,12 +65,11 @@ export function AppContextProvider(props) {
   const showNote = (id) => {
     setFormState((prevState) => {
       return {
-        ...prevState,
         noteId: id,
+        isVisible: true,
+        readOnly: true,
       };
     });
-    switchForm();
-    editNote();
   };
 
   const editNote = () => {

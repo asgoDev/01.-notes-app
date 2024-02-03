@@ -5,7 +5,7 @@ import "../styles/note-card.css";
 function NoteCard({
   note = { title: "Sin título", description: "Sin descripción" },
 }) {
-  const { deleteNote, showNote, switchForm } = useContext(AppContext);
+  const { showNote } = useContext(AppContext);
 
   return (
     <li
@@ -18,7 +18,6 @@ function NoteCard({
       <p className="note-card__description">
         {note.description || "Sin descripción"}
       </p>
-      {/* <button onClick={() => deleteNote(note.id)}>Borrar</button> */}
     </li>
   );
 }

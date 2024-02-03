@@ -21,12 +21,40 @@
   margin: auto;
   display: flex;
   flex-direction: column;
-} 
+}
 
 .form-container__header {
-  padding: 1.4rem ;
-  display:flex;
+  padding: 1.4rem;
+  display: flex;
   justify-content: space-between;
+}
+
+.form-container__control-btn {
+  aspect-ratio: 1/1;
+  width: 4rem;
+  border: none;
+  background: unset;
+  cursor: pointer;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.form-container__control-btn:hover {
+  background: #e9e9ed;
+}
+
+.form-container__control-btn:disabled {
+  background: unset;
+  cursor: unset;
+}
+
+.form-container__control-btn:disabled > .control-btn__icon > polygon {
+  fill: gray;
+}
+
+.control-btn__icon {
+  font-size: 2rem;
+  vertical-align: middle;
 }
 
 .form {
@@ -38,9 +66,9 @@
 
 .form__date {
   background-color: #fff;
-  padding: .1rem 1.4rem;
+  padding: 0.1rem 1.4rem;
   border: 2px solid slategray;
-  border-radius: .4rem;
+  border-radius: 0.4rem;
 }
 
 input,
