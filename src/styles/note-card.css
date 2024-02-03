@@ -1,0 +1,55 @@
+.note-card {
+  /* aspect-ratio: 1/1.6; */
+
+  text-wrap: balance;
+  padding: 1.6rem 1rem;
+  list-style: none;
+  border-radius: 1rem;
+  transition: all ease-out 0.1s;
+  cursor: pointer;
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+  /* box-shadow: -2px -2px 2px 1px #f5f5f577 inset; */
+}
+
+.note-card__title {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+}
+
+.note-card__description {
+  height: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 0.6rem;
+  /* margin-left: .2rem; */
+  font-size: 1rem;
+  line-height: 1.2rem;
+  opacity: 0.8;
+}
+.bg-red {
+  background: #fc6c53;
+}
+
+.bg-blue {
+  background-color: #1cdddc;
+}
+.bg-green {
+  background-color: #97e3b8;
+}
+.bg-pink {
+  background-color: #febdc4;
+}
+.bg-violet {
+  background-color: #bdb4ff;
+}
+.bg-orange {
+  background-color: #ffcf87;
+}
+
+.note-card:hover {
+  transform: scale(1.2);
+
+  box-shadow: 0px 0px 5px -1px #424242;
+}

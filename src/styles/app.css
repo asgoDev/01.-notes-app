@@ -1,0 +1,76 @@
+.app-body {
+  height: 100vh;
+  /* padding: 0 1.4rem 1.4rem 1.4rem; */
+  color: #424242;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  -webkit-scrollbar-width: thin;
+  scroll-behavior: smooth;
+}
+
+.app-header {
+  margin: 1.4rem 0;
+  padding: 1.4rem;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+
+  background: #fffffff6;
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid slategray;
+}
+
+.app-header__title {
+  width: max-content;
+  font-size: 2.1rem;
+  font-weight: 900;
+  margin: auto;
+}
+
+main {
+  margin: 0rem auto;
+  margin-top: .7rem;
+  padding: 1.4rem 1.4rem 1.4rem 1.4rem;
+  max-width: 800px;
+  /* position: relative; */
+}
+
+.floating-buttons-panel {
+  position: fixed;
+  width: 100%;
+  top: 100%;
+  left: 0;
+}
+
+.movement-x-ratio {
+  max-width: 800px;
+  margin: auto;
+}
+
+.new-note-button {
+  display: block;
+  margin-left: auto;
+  margin-right: 2.8rem;
+  /* z-index: 3; */
+  z-index: 100;
+  transform: translateY(-125%);
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  font-size: 2.7rem;
+  font-weight: bold;
+
+  background-color: #fff;
+  cursor: pointer;
+  color: skyblue;
+  border: 3px solid skyblue;
+  transition: all ease 0.1s;
+  /* box-shadow: 0px 0px 0px 0px #424242; en caso de transicion */
+  box-shadow: 0px 0px 5px -1px #424242;
+
+}
+
+.new-note-button:hover {
+  background: skyblue;
+  color: white;
+}

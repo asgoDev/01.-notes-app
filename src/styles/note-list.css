@@ -1,0 +1,6 @@
+.note-list {
+  gap: 0.7rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-auto-rows: 275px;
+}
