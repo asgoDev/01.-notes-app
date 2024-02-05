@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-// import { noteList as old, idRegister } from "../data/notesDB";
+import { noteList as old, idRegister } from "../data/notesDB";
 import { toggleBoolean } from "../utils/logicFx";
 import { incrementValue } from "../utils/mathFx";
 
@@ -7,16 +7,16 @@ export const AppContext = createContext();
 
 export function AppContextProvider(props) {
   const [noteList, setNoteList] = useState([]);
-  const [idCounter, setIdCounter] = useState(0);
+  const [idCounter, setIdCounter] = useState(idRegister > 0 ? idRegister : 0);
   const [formState, setFormState] = useState({
     isVisible: false,
     readOnly: false,
     noteId: null,
   });
 
-  // useEffect(() => {
-  //   setNoteList(old || []);
-  // }, []);
+  useEffect(() => {
+    setNoteList(old || []);
+  }, []);
 
   // Control
 
