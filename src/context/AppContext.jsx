@@ -1,5 +1,4 @@
 import { createContext, useState, useEffect } from "react";
-// import { noteList as old, idRegister } from "../data/notesDB";
 import { toggleBoolean } from "../utils/logicFx";
 import { incrementValue } from "../utils/mathFx";
 
