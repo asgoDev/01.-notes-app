@@ -1,13 +1,17 @@
 import { createContext, useState, useEffect } from "react";
-import { noteList as old, idRegister } from "../data/notesDB";
+// import { noteList as old, idRegister } from "../data/notesDB";
 import { toggleBoolean } from "../utils/logicFx";
 import { incrementValue } from "../utils/mathFx";
 
 export const AppContext = createContext();
 
 export function AppContextProvider(props) {
-  const [noteList, setNoteList] = useState([]);
-  const [idCounter, setIdCounter] = useState(idRegister > 0 ? idRegister : 0);
+  const [noteList, setNoteList] = useState(
+    JSON.parse(localStorage.getItem("list")) || []
+  );
+  const [idCounter, setIdCounter] = useState(
+    JSON.parse(localStorage.getItem("idRef")) || 0
+  );
   const [formState, setFormState] = useState({
     isVisible: false,
     readOnly: false,
@@ -15,8 +19,12 @@ export function AppContextProvider(props) {
   });
 
   useEffect(() => {
-    setNoteList(old || []);
-  }, []);
+    localStorage.setItem("list", JSON.stringify(noteList));
+    localStorage.setItem("idRef", JSON.stringify(idCounter));
+    if (noteList.length == 0) {
+      setIdCounter(0)
+    }
+  }, [noteList]);
 
   // Control
 
@@ -36,8 +44,11 @@ export function AppContextProvider(props) {
     if (!newNote.title && !newNote.description) return;
     if (newNote.id || newNote.id === 0) return updateNote(newNote);
     // if noteData doesn't have id, generateNewOne
-    newNote.id = generateId();
+    let newId = generateId()
+    // newNote.id = newId;
+    newNote = {...newNote, id: newId}
     setNoteList((prevList) => [...prevList, newNote]);
+    showNote(newId)
   };
 
   const deleteNote = (noteId) => {

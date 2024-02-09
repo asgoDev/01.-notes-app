@@ -45,6 +45,9 @@ function NoteForm() {
     let newNote = formatNoteValues(formValues);
     editNote();
     createNote(newNote);
+    // let newNoteId = createNote(newNote);
+    
+    // newNoteId && setFormValues({...formValues, id: newNoteId});
   };
 
   const comeBack = (e) => {
