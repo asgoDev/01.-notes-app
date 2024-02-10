@@ -1,7 +1,7 @@
 .app-body {
   height: 100dvh;
-  /* padding: 0 1.4rem 1.4rem 1.4rem; */
-  color: #424242;
+  background: var(--bg-color);
+  color: var(--font-color);
   overflow-x: hidden;
   scrollbar-width: thin;
   -webkit-scrollbar-width: thin;
@@ -15,7 +15,8 @@
   top: 0;
   z-index: 2;
 
-  background: #fffffff6;
+  /* background: #fffffff6; */
+  background: var(--bg-color-transparent);
   backdrop-filter: blur(10px);
   border-bottom: 2px solid slategray;
 }
@@ -73,4 +74,11 @@ main {
 .new-note-button:hover {
   background: skyblue;
   color: white;
+}
+
+
+@media (max-width: 560px) {
+  .app-header__title {
+    font-size: 1.6rem;
+  }
 }

@@ -1,15 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
 :root {
-    --turquoise: #1cdddc;
-    --blue: #b9e9ff;
-    --green: #97e3b8;
-    --pink: #febdc4;
-    --violet: #bdb4ff;
-    --orange: #ffcf87;
-    --red: #fc6c53;
+  --turquoise: #1cdddc;
+  --blue: #b9e9ff;
+  --green: #97e3b8;
+  --pink: #febdc4;
+  --violet: #bdb4ff;
+  --orange: #ffcf87;
+  --red: #fc6c53;
+  --bg-color: #ffffff;
+  --bg-color-tranparent: #fffffff6;
+  --font-color: #424242;
 }
-
 
 * {
   margin: 0;
@@ -21,17 +23,22 @@
   font-optical-sizing: auto;
   /* font-weight: 300; */
   font-style: normal;
+
+  user-select: none;
+  transition: all 0.5s ease;
 }
 
-/* html {
-  background: #000;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --turquoise: #22a2a1;
+    --blue: #37c0ff;
+    --green: #39a266;
+    --pink: #ff6374;
+    --violet: #8b7df0;
+    --orange: #d98200;
+    --red: #db4c33;
+    --bg-color: #242424;
+    --bg-color-transparent: #242424f6;
+    --font-color: #ffffff;
+  }
 }
-
-input, textarea {
-  background: #00000056;
-}
-
-header {
-  background: #ffffff56;
-
-} */

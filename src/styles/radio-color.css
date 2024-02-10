@@ -12,3 +12,11 @@
   outline: .3rem solid slategray;
 }
 
+
+
+@media (max-width: 475px) {
+  /* .radio-color {
+    width: 1.2rem;
+    height: 1.2rem;
+  } */
+}

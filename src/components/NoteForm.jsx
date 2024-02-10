@@ -22,7 +22,8 @@ function NoteForm() {
   //control edition
   useEffect(() => {
     if (formState.noteId || formState.noteId === 0) {
-      emptyForm && setFormValues(getNote(formState.noteId));
+      setFormValues(getNote(formState.noteId));
+      // emptyForm && setFormValues(getNote(formState.noteId));
     } 
   }, [formState.readOnly]);
 
@@ -71,7 +72,7 @@ function NoteForm() {
       <div className="form-container">
         <header className="form-container__header">
           <FormControlButton onClickFunction={comeBack} icon={<FcPrevious />} />
-
+          <h1 className="app-header__title">NOTELICIOUS</h1>
           {formState.readOnly ? (
             <FormControlButton
               onClickFunction={(e) => {
