@@ -1,0 +1,14 @@
+.radio-color {
+  width: 1.4rem;
+  height: 1.4rem;
+  padding: unset;
+  appearance: unset;
+  border: unset;
+  border-radius: 50%;
+  box-shadow: 0 0 1px 0px rgb(0, 0, 0);
+}
+
+.radio-color:checked {
+  outline: .3rem solid slategray;
+}
+

@@ -4,6 +4,7 @@ import { getActualDate } from "../utils/date";
 import "../styles/note-form.css";
 import { FcCheckmark, FcEmptyTrash, FcPrevious } from "react-icons/fc";
 import FormControlButton from "./FormControlButton";
+import RadioColor from "./RadioColor";
 
 function NoteForm() {
   const { formState, createNote, getNote, editNote, closeForm, deleteNote } =
@@ -13,15 +14,16 @@ function NoteForm() {
     title: "",
     description: "",
     date: getActualDate(),
+    bg: "",
   });
 
-  const [emptyForm, setEmptyForm] = useState("");
+  const [emptyForm, setEmptyForm] = useState(true);
 
   //control edition
   useEffect(() => {
     if (formState.noteId || formState.noteId === 0) {
-      setFormValues(getNote(formState.noteId));
-    } // pendiente
+      emptyForm && setFormValues(getNote(formState.noteId));
+    } 
   }, [formState.readOnly]);
 
   useEffect(() => {
@@ -39,15 +41,23 @@ function NoteForm() {
     return { title, description, id, date, bg };
   };
 
+  const getRadioValue = (e) => {
+    setFormValues((prevState) => {
+      return { ...prevState, bg: e.target.value };
+    });
+    editMode();
+  };
+
   const saveNote = (e) => {
     e.preventDefault();
     if (formValues.title == "" && formValues.description == "") return 0;
     let newNote = formatNoteValues(formValues);
     editNote();
     createNote(newNote);
-    // let newNoteId = createNote(newNote);
-    
-    // newNoteId && setFormValues({...formValues, id: newNoteId});
+  };
+
+  const editMode = () => {
+    if (formState.readOnly) editNote();
   };
 
   const comeBack = (e) => {
@@ -78,12 +88,7 @@ function NoteForm() {
             />
           )}
         </header>
-        <form
-          className="form"
-          onClick={() => {
-            if (formState.readOnly) editNote();
-          }}
-        >
+        <form className="form">
           <input
             readOnly={formState.readOnly}
             className="form__title-input"
@@ -93,17 +98,37 @@ function NoteForm() {
             onChange={(e) => {
               setFormValues({ ...formValues, title: e.target.value });
             }}
+            onClick={editMode}
           />
           <div className="form__secondary-options">
             <fieldset
-              readOnly={formState.readOnly}
+              // readOnly={formState.readOnly}
               className="form__note-colors"
             >
-              <input className="radio-color" type="radio" name="color" id="" />
-              <input className="radio-color" type="radio" name="color" id="" />
-              <input className="radio-color" type="radio" name="color" id="" />
-              <input className="radio-color" type="radio" name="color" id="" />
-              <input className="radio-color" type="radio" name="color" id="" />
+              <RadioColor
+                name="color"
+                value="turquoise"
+                onChange={getRadioValue}
+                checked={true}
+              />
+              <RadioColor
+                name="color"
+                value="blue"
+                onChange={getRadioValue}
+              />
+              <RadioColor name="color" value="green" onChange={getRadioValue} />
+              <RadioColor name="color" value="pink" onChange={getRadioValue} />
+              <RadioColor
+                name="color"
+                value="violet"
+                onChange={getRadioValue}
+              />
+              <RadioColor
+                name="color"
+                value="orange"
+                onChange={getRadioValue}
+              />
+              <RadioColor name="color" value="red" onChange={getRadioValue} />
             </fieldset>
             <span className="form__date">{formValues.date}</span>
           </div>
@@ -115,6 +140,7 @@ function NoteForm() {
             onChange={(e) => {
               setFormValues({ ...formValues, description: e.target.value });
             }}
+            onClick={editMode}
           ></textarea>
         </form>
       </div>

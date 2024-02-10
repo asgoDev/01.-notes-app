@@ -3,7 +3,7 @@
 }
 
 .form-view-bg {
-  background: #ffffff8c;
+  background: #ffffffd3;
   height: 100%;
   width: 100%;
   padding: 1rem;
@@ -64,12 +64,7 @@
   flex-grow: 1;
 }
 
-.form__date {
-  background-color: #fff;
-  padding: 0.1rem 1.4rem;
-  border: 2px solid slategray;
-  border-radius: 0.4rem;
-}
+
 
 input,
 textarea {
@@ -77,6 +72,7 @@ textarea {
   padding: 0.3rem 1rem;
   border: 2px solid slategray;
   outline: none;
+  color: rgb(83, 95, 107);
 }
 
 .form__title-input {
@@ -85,23 +81,27 @@ textarea {
 
 .form__secondary-options {
   display: flex;
+  justify-content: space-evenly;
 }
 
 .form__note-colors {
-  flex-grow: 1;
+  /* flex-grow: 1; */
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 1.4rem;
 
   border: none;
 }
 
-.radio-color {
-  width: 1.4rem;
-}
-
-.radio-color:scope {
-  background-color: #000;
+.form__date {
+  /* background-color: #fff; */
+  color: rgb(83, 95, 107);
+  font-weight: bolder;
+  /* padding: .4rem 1rem; */
+  /* margin-right: 1.6rem; */
+  /* border: 2px solid slategray; */
+  border-radius: 0.4rem;
 }
 
 .form__text-area {

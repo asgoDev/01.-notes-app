@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
+:root {
+    --turquoise: #1cdddc;
+    --blue: #b9e9ff;
+    --green: #97e3b8;
+    --pink: #febdc4;
+    --violet: #bdb4ff;
+    --orange: #ffcf87;
+    --red: #fc6c53;
+}
+
+
 * {
   margin: 0;
   padding: 0;

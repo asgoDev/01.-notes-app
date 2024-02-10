@@ -12,7 +12,7 @@ function NoteCard({
       onClick={() => {
         showNote(note.id);
       }}
-      className={`note-card bg-${note.bg || "blue"}`}
+      className={`note-card bg-${note.bg || "turquoise"}`}
     >
       <h3 className="note-card__title">{note.title || "Sin título"}</h3>
       <p className="note-card__description">

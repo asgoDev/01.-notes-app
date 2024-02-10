@@ -33,19 +33,22 @@
 }
 
 .bg-blue {
-  background-color: #1cdddc;
+  background-color: var(--blue);
+}
+.bg-turquoise {
+  background-color: var(--turquoise);
 }
 .bg-green {
-  background-color: #97e3b8;
+  background-color: var(--green);
 }
 .bg-pink {
-  background-color: #febdc4;
+  background-color: var(--pink);
 }
 .bg-violet {
-  background-color: #bdb4ff;
+  background-color: var(--violet);
 }
 .bg-orange {
-  background-color: #ffcf87;
+  background-color: var(--orange);
 }
 
 .note-card:hover {
