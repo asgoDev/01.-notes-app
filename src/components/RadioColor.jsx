@@ -9,10 +9,7 @@ function RadioColor({ name, value, checked = false, onChange }) {
       name={name}
       value={value}
       defaultChecked={checked}
-      onChange={(e)=>{
-        console.log('clicked');
-        onChange(e)
-      }}
+      onChange={onChange}
     />
   );
 }

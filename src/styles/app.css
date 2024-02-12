@@ -1,39 +1,37 @@
 .app-body {
   height: 100dvh;
-  background: var(--bg-color);
+  background-color: var(--bg-color);
   color: var(--font-color);
   overflow-x: hidden;
   scrollbar-width: thin;
   -webkit-scrollbar-width: thin;
   scroll-behavior: smooth;
+  transition: background-color .3s ease;
 }
 
 .app-header {
-  margin: 1.4rem 0;
-  padding: 1.4rem;
+  margin: var(--margin) 0;
+  padding: var(--padding-m) 0;
   position: sticky;
   top: 0;
   z-index: 2;
 
-  /* background: #fffffff6; */
   background: var(--bg-color-transparent);
-  backdrop-filter: blur(10px);
-  border-bottom: 2px solid slategray;
+  backdrop-filter: blur(5px);
+  border-bottom: var(--border);
 }
 
 .app-header__title {
   width: max-content;
-  font-size: 2.1rem;
+  font-size: var(--title-size);
   font-weight: 900;
   margin: auto;
 }
 
 main {
-  margin: 0rem auto;
-  margin-top: .7rem;
-  padding: 1.4rem 1.4rem 1.4rem 1.4rem;
-  max-width: 800px;
-  /* position: relative; */
+  margin: auto;
+  padding: var(--padding-m);
+  max-width: var(--container-width);
 }
 
 .floating-buttons-panel {
@@ -44,7 +42,7 @@ main {
 }
 
 .movement-x-ratio {
-  max-width: 800px;
+  max-width: var(--container-width);
   margin: auto;
 }
 
@@ -52,8 +50,6 @@ main {
   display: block;
   margin-left: auto;
   margin-right: 2.8rem;
-  /* z-index: 3; */
-  z-index: 100;
   transform: translateY(-125%);
   width: 5rem;
   height: 5rem;
@@ -77,8 +73,4 @@ main {
 }
 
 
-@media (max-width: 560px) {
-  .app-header__title {
-    font-size: 1.6rem;
-  }
-}
+

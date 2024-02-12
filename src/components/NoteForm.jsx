@@ -18,13 +18,19 @@ function NoteForm() {
   });
 
   const [emptyForm, setEmptyForm] = useState(true);
+  const [color, setColor] = useState();
 
   //control edition
   useEffect(() => {
     if (formState.noteId || formState.noteId === 0) {
       setFormValues(getNote(formState.noteId));
-      // emptyForm && setFormValues(getNote(formState.noteId));
-    } 
+      // if just change the radio color option, 
+      //set the color state to the note object
+      color &&
+        setFormValues((prevState) => {
+          return { ...prevState, bg: color };
+        });
+    }
   }, [formState.readOnly]);
 
   useEffect(() => {
@@ -43,9 +49,7 @@ function NoteForm() {
   };
 
   const getRadioValue = (e) => {
-    setFormValues((prevState) => {
-      return { ...prevState, bg: e.target.value };
-    });
+    setColor(e.target.value);
     editMode();
   };
 
@@ -112,11 +116,7 @@ function NoteForm() {
                 onChange={getRadioValue}
                 checked={true}
               />
-              <RadioColor
-                name="color"
-                value="blue"
-                onChange={getRadioValue}
-              />
+              <RadioColor name="color" value="blue" onChange={getRadioValue} />
               <RadioColor name="color" value="green" onChange={getRadioValue} />
               <RadioColor name="color" value="pink" onChange={getRadioValue} />
               <RadioColor

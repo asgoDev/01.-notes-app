@@ -1,11 +1,10 @@
 .note-card {
   /* aspect-ratio: 1/1.6; */
-
   text-wrap: balance;
-  padding: 1.6rem 1rem;
+  padding: var(--padding-m) var(--padding);
   list-style: none;
-  border-radius: 1rem;
-  transition: all ease-out 0.1s;
+  border-radius: var(--border-radius);
+  transition: transform ease-out 0.1s;
   cursor: pointer;
   overflow: hidden;
 
@@ -22,16 +21,16 @@
   height: 60%;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-top: 0.6rem;
-  /* margin-left: .2rem; */
-  font-size: 1rem;
+  margin-top: var(--gap);
   line-height: 1.2rem;
-  opacity: 0.8;
+  line-height: 1rem;
+  opacity: 0.7;
 }
+
+
 .bg-red {
   background: #fc6c53;
 }
-
 .bg-blue {
   background-color: var(--blue);
 }
@@ -53,6 +52,5 @@
 
 .note-card:hover {
   transform: scale(1.2);
-
   box-shadow: 0px 0px 5px -1px #424242;
 }

@@ -1,6 +1,7 @@
 .radio-color {
-  width: 1.4rem;
-  height: 1.4rem;
+  display: block;
+  width: var(--radio-color-size);
+  aspect-ratio: 1/1;
   padding: unset;
   appearance: unset;
   border: unset;
@@ -9,14 +10,5 @@
 }
 
 .radio-color:checked {
-  outline: .3rem solid slategray;
-}
-
-
-
-@media (max-width: 475px) {
-  /* .radio-color {
-    width: 1.2rem;
-    height: 1.2rem;
-  } */
+  outline: 0.3rem solid slategray;
 }
