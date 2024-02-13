@@ -44,7 +44,6 @@
 @media (hover: hover) {
   .form-container__control-btn:hover {
     background: #e9e9ed;
-    /* background: var(--font-color); */
   }
 }
 

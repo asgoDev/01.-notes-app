@@ -48,7 +48,8 @@
   font-style: normal;
 
   user-select: none;
-  /* transition: all 0.5s ease; */
+
+  -webkit-tap-highlight-color: transparent;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -75,8 +76,8 @@
 }
 
 @media (max-width: 475px) {
-  :root{
-    --radio-color-size: 1.2rem
+  :root {
+    --radio-color-size: 1.2rem;
   }
 }
 
