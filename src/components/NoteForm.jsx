@@ -10,6 +10,8 @@ function NoteForm() {
   const { formState, createNote, getNote, editNote, closeForm, deleteNote } =
     useContext(AppContext);
 
+  const [emptyForm, setEmptyForm] = useState(true);
+  const [color, setColor] = useState();
   const [formValues, setFormValues] = useState({
     title: "",
     description: "",
@@ -17,14 +19,11 @@ function NoteForm() {
     bg: "",
   });
 
-  const [emptyForm, setEmptyForm] = useState(true);
-  const [color, setColor] = useState();
-
   //control edition
   useEffect(() => {
     if (formState.noteId || formState.noteId === 0) {
       setFormValues(getNote(formState.noteId));
-      // if just change the radio color option, 
+      // if just change the radio color option,
       //set the color state to the note object
       color &&
         setFormValues((prevState) => {
@@ -38,6 +37,12 @@ function NoteForm() {
       ? setEmptyForm(true)
       : setEmptyForm(false);
   }, [formValues]);
+
+  useEffect(() => {
+    setFormValues((prevState) => {
+      return { ...prevState, bg: color };
+    });
+  }, [color]);
 
   const formatNoteValues = (noteData) => {
     let { title, description, id, date, bg } = noteData;
