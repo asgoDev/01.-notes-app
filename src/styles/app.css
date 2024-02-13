@@ -67,9 +67,17 @@ main {
 
 }
 
-.new-note-button:hover {
+.new-note-button:active {
   background: skyblue;
   color: white;
+}
+
+
+@media (hover:hover) {  
+  .new-note-button:hover {
+    background: skyblue;
+    color: white;
+  }
 }
 
 

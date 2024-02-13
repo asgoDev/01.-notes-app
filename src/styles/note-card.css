@@ -27,7 +27,6 @@
   opacity: 0.7;
 }
 
-
 .bg-red {
   background: #fc6c53;
 }
@@ -50,7 +49,14 @@
   background-color: var(--orange);
 }
 
-.note-card:hover {
+.note-card:active {
   transform: scale(1.2);
   box-shadow: 0px 0px 5px -1px #424242;
+}
+
+@media (hover: hover) {
+  .note-card:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 0px 5px -1px #424242;
+  }
 }

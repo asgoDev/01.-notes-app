@@ -36,9 +36,16 @@
   transition: var(--transition-short);
 }
 
-.form-container__control-btn:hover {
+.form-container__control-btn:active {
   background: #e9e9ed;
   /* background: var(--font-color); */
+}
+
+@media (hover: hover) {
+  .form-container__control-btn:hover {
+    background: #e9e9ed;
+    /* background: var(--font-color); */
+  }
 }
 
 .form-container__control-btn:disabled {
@@ -97,7 +104,7 @@ textarea {
 }
 
 .form__text-area {
-  padding:var(--padding-m);
+  padding: var(--padding-m);
   resize: none;
   flex-grow: 1;
 }
@@ -116,7 +123,7 @@ textarea {
   .form-container__header {
     padding: 0.8rem 0;
   }
-  
+
   .form__note-colors {
     gap: 0;
     flex-grow: 1;
