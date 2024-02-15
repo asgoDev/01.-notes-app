@@ -12,8 +12,8 @@ const manifestForPlugin = {
     theme_color: "#ffffff",
     backgroun_color: "#ffffff",
     display: "standalone",
-    scope: "/",
-    start_url: "/",
+    "start_url": "/Notelicious/",
+    "scope": "/Notelicious/",
     // orientation: 'portrait',
     icons: [
       {
